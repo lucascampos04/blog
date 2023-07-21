@@ -10,7 +10,7 @@ const flash = require('express-flash');
 app.use(express.urlencoded({ extended: true }));
 
 // Bootstrap CSS
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join('public')));
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
