@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tela Inicial</title>
+    <!-- Caminho para o arquivo bootstrap.min.css na pasta /public -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Estilos CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }  
+
+        #descMy{
+            font-weight: 800;
+        }
+
+        #iam{
+            font-size: 30px;
+        }
+
+        .profile-pic{
+            margin-top: 30px;
+            border-radius: 3%;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#" id="iam">Lucas Oliviera Campos</a>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#contatos">Contatos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projetos">Projetos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/artigos">Artigos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Lado esquerdo bege com a foto -->
+            <div class="col-md-6 beige-bg text-center">
+                <img class="profile-pic" src="imgs/IMG_20230306_162700.jpg" width="100%" height="60%" alt="Foto de perfil">
+            </div>
+
+            <!-- Lado direito bege com a descrição sobre você -->
+            <div class="col-md-6 beige-bg">
+                <h2>Sobre Mim</h2>
+                <p id="descMy">Olá, me chamo Lucas Oliveira Campos, meu primeiro contato com a programação foi com 16 anos com a linguagem C. Sempre gostei de resolver problemas e fazer projetos desafiadores. Porém, como todo iniciante, não sabia como estudar e acabei não desenvolvendo projetos pessoais, nem mesmo criando um GitHub. Então, desisti de programar pensando que não era para mim, mas sempre voltava. Em 2021, com 17 anos, decidi começar a estudar JavaScript, porém não me identifiquei de imediato. Mesmo assim, continuei estudando e me aprimorando. No final de 2022, voltei a estudar C, porém não parei com o JavaScript. Em fevereiro de 2023, iniciei a faculdade de Ciências da Computação na Uninove e me apaixonei por Python, o que me fez largar C. Fiz o primeiro semestre totalmente focado em Python e JavaScript. Agora, em junho, iniciei meus estudos em Java e Flutter, mas não parei de estudar Python e JavaScript. Atualmente, já desenvolvi meu portfólio e alguns projetos.</p>
+                <p id="descMy">Apesar de eu não me identificar tanto com o desenvolvimento front-end, estou sempre em busca de aprender novas frameworks que agilizem meu tempo na criação de projetos. Além disso, estou desempregado no momento e atuo como freelancer, buscando oportunidades para aplicar meus conhecimentos e expandir minha experiência na área.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        {{> projetos}}
+        {{> projeto_card}}
+        {{> projeto_card_automatizador}}
+        {{> projeto_snake}}
+        {{> projeto_oliveiraWeb}}
+        {{> projeto_GeradorDeSenhas}}
+    </div>
+
+    <!-- Caminho para o arquivo bootstrap.min.js na pasta /public -->
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+

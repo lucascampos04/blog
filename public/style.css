@@ -1,0 +1,64 @@
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    margin-top: 20px;
+  }
+  
+  /* Estilos para a barra de navegação */
+  .navbar {
+    border-bottom: 3px solid #007bff;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #fff;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #f8f9fa;
+  }
+  
+  /* Estilos para os cards dos artigos */
+  .card {
+    border: 1px solid #ddd;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Estilos para o formulário */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  .form-control {
+    border: 1px solid #ddd;
+  }
+  
+  /* Estilos para o rodapé */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+  }
+  
