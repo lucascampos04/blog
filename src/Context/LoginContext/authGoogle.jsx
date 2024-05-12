@@ -30,9 +30,13 @@ export const AuthGoogleProvider = ({ children }) => {
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 const user = result.user;
-                setUser(user);
-                sessionStorage.setItem("@AuthFirebase:token", token);
-                sessionStorage.setItem("@AuthFirebase:user", JSON.stringify(user));
+                if (user.email === "camposdlucasoli@gmail.com"){
+                    setUser(user);
+                    sessionStorage.setItem("@AuthFirebase:token", token);
+                    sessionStorage.setItem("@AuthFirebase:user", JSON.stringify(user));
+                } else {
+                    alert("Email invalido")
+                }
             })
             .catch((error) => {
                 const errorCode = error.code;
