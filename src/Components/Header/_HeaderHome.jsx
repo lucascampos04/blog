@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
-import {FormCreatedPublication} from "../Forms/FormCreatePublication/FormCreationPublication"
+import React, { useContext, useState } from 'react';
+import { FormCreatedPublication } from "../Forms/FormCreatePublication/FormCreationPublication";
+import { authContextGoogle } from '../../Context/LoginContext/authGoogle';
+import { useNavigate } from "react-router-dom";
 
 export const HeaderHome = () => {
     const [showModal, setShowModal] = useState(false);
+    const { signOut } = useContext(authContextGoogle);
+    const navigate = useNavigate(); 
 
     const handleCloseModal = () => setShowModal(false);
     const handleShowModal = () => setShowModal(true);
+
+    const handleSignOut = () => {
+        signOut();
+        navigate("/"); 
+    };
 
     return (
         <header>
@@ -25,7 +34,16 @@ export const HeaderHome = () => {
                 >
                     Criar publicação
                 </button>
+
+                <button
+                    type='button'
+                    className='btn btn-danger'
+                    onClick={handleSignOut}
+                >
+                    Sair
+                </button>
             </span>
+
             <FormCreatedPublication show={showModal} handleClose={handleCloseModal} />
         </header>
     );
