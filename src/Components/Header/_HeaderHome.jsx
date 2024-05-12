@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { FormCreatedPublication } from "../Forms/FormCreatePublication/FormCreationPublication";
 import { authContextGoogle } from '../../Context/LoginContext/authGoogle';
 import { useNavigate } from "react-router-dom";
+import "../../public/home.css"
 
 export const HeaderHome = () => {
     const [showModal, setShowModal] = useState(false);
@@ -26,7 +27,7 @@ export const HeaderHome = () => {
                     Ver todas as publicações
                 </button>
             </span>
-            <span>
+            <span className='buttons-right'>
                 <button 
                     type="button" 
                     className="btn btn-primary"
