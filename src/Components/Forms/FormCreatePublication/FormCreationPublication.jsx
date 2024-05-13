@@ -6,6 +6,7 @@ import { AppConfigFirebase } from '../../../Services/firebase';
 export const FormCreatedPublication = ({ show, handleClose }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [imageBase64, setImageBase64] = useState('')
   const [isMaxLengthReached, setIsMaxLengthReached] = useState(false);
   const [loading, setLoading] = useState(false);
   const [selectedLanguages, setSelectedLanguages] = useState([]);
@@ -38,6 +39,19 @@ export const FormCreatedPublication = ({ show, handleClose }) => {
     }
   };
 
+  const handleImagemChange = (event) => {
+      const file = event.target.files[0]
+      const reader = new FileReader()
+
+      reader.onloadend = () => {
+        setImageBase64(reader.result)
+      }
+
+      if (file){
+        reader.readAsDataURL(file)
+      }
+  }
+
   const handleSubmit = async () => {
     event.preventDefault()
 
@@ -50,7 +64,8 @@ export const FormCreatedPublication = ({ show, handleClose }) => {
         title: title, 
         comentario: content, 
         data: currentData,
-        Language: selectedLanguages
+        Language: selectedLanguages,
+        image:imageBase64
       })
 
       console.log("Documento adicionado com sucesso!!! ID : " + docRef.id)
@@ -100,12 +115,32 @@ export const FormCreatedPublication = ({ show, handleClose }) => {
               className={`form-control ${isMaxLengthReached ? 'text-danger' : ''}`} 
               id="content"
               name="content"
+              placeholder=''
               value={content}
               onChange={handleContentChange}
             ></textarea>
             <div className={`form-text ${isMaxLengthReached ? 'text-danger' : ''}`}>
               {content.length}/200 Caracteres
               </div>
+          </div>
+
+          <div className="mb-3">
+          <label htmlFor="image" className="form-label">
+            Selecionar Imagem
+          </label>
+          <div className="custom-file">
+            <input
+              type="file"
+              className="custom-file-input"
+              id="image"
+              name="image"
+              accept="image/*"
+              onChange={handleImagemChange}
+            />
+            <label className="custom-file-label" htmlFor="image">
+              Escolher arquivo...
+            </label>
+          </div>
           </div>
 
           <div className="mb-3">

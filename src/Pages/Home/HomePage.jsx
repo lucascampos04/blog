@@ -12,7 +12,7 @@ export const Homepage = () => {
         <div style={{margin: "0%", padding: "0%", height: "100svh", overflow: "hidden"}}>
             <VerificationLocalStorage 
                 storageKey="@AuthFirebase:user" 
-                redirectTo={"/login"}
+                redirectTo={"/"}
             />
             <HeaderHome/>
             <_MainAllPeoples/>
