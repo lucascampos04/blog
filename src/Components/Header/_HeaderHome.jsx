@@ -42,7 +42,7 @@ export const HeaderHome = () => {
 
     return (
         <header>
-            <span>
+            <span style={{display:"flex", gap: "10px"}}>
                 <button 
                     type="button"  
                     className="btn btn-secondary"
