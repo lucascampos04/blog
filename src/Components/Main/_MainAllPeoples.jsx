@@ -48,6 +48,9 @@ export const _MainAllPeoples = () => {
             <p>{project.dataFormatada}</p>
             <p>{project.language}</p>
             {project.image && <img src={project.image} alt="Imagem" width={"500px"} height={"300px"}/>}
+            <a href={`https://github.com/lucascampos04/${project.projectLink}`} target="_blank" rel="noopener noreferrer">
+                Github
+            </a>
           </div>
         ))}
       </div>
