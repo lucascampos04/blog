@@ -1,16 +1,16 @@
 header {
-    background-color: black;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    padding: 14px 10px;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 10px;
 }
 
-.buttons-right{
-    display: flex;
-    gap: 10px;
+.buttons-right {
+  display: flex;
+  gap: 10px;
 }
 
 .modal-options-projects,
@@ -58,38 +58,84 @@ header {
 }
 
 .input-group-text {
-    background-color: #f8f9fa;
-  }
-  
-  .form-control {
-    border-radius: 0.25rem;
-  }
-  
-  .form-text {
-    font-size: 0.875rem;
-  }
-  
-  .form-label {
-    font-weight: bold;
-  }
-  
-  textarea.form-control {
-    min-height: 100px;
-  }
-  
-  .form-check-input[type="checkbox"] {
-    margin-top: 0.3rem;
-  }
-  
-  .btn {
-    border-radius: 0.25rem;
-  }
-  
-  .modal-content {
-    border-radius: 0.5rem;
-  }
-  
-  .modal-footer .btn {
-    margin: 0 0.25rem;
-  }
-  
+  background-color: #f8f9fa;
+}
+
+.form-control {
+  border-radius: 0.25rem;
+}
+
+.form-text {
+  font-size: 0.875rem;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+textarea.form-control {
+  min-height: 100px;
+}
+
+.form-check-input[type="checkbox"] {
+  margin-top: 0.3rem;
+}
+
+.btn {
+  border-radius: 0.25rem;
+}
+
+.modal-content {
+  border-radius: 0.5rem;
+}
+
+.modal-footer .btn {
+  margin: 0 0.25rem;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.container-fluid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  gap: 20px;
+  border: 1px solid red;
+  width: 100%;
+}
+
+.col-languages {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px 40px;
+}
+
+.colLanguages {
+  padding: 5px;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.colLanguages:hover {
+  box-shadow: 1px 1px 1px 1px gray;
+}
+
+.smaller-font {
+  font-size: 0.8rem;
+}
+
+.colFinale{
+  padding: 5px;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.colFinale:hover{
+  box-shadow: 1px 1px 1px 1px gray;
+}

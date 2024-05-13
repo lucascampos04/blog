@@ -3,10 +3,11 @@ import "../../public/main.css";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { AppConfigFirebase } from "../../Services/firebase";
 import { authContextGoogle } from "../../Context/LoginContext/authGoogle";
+import { FilterProject } from "../Filters/FiletrProject";
 
 export const _MainAllPeoples = () => {
   const [projects, setProjects] = useState([]);
-  const [userId, setUserId] = useState("");
+
   const allowedUserEmail = "camposdlucasoli@gmail.com";
 
   const {user} = useContext(authContextGoogle)
@@ -35,10 +36,12 @@ export const _MainAllPeoples = () => {
 
     fetchProjects();
   }, []);
-
+  
   return (
     <main>
-      <div className="c1 modal-options-projects">Modal 1</div>
+      <div className="c1 modal-options-projects">
+        <FilterProject/>
+      </div>
       <div className="c2 modal-view-all-projects">
         {projects.map((project) => (
           <div key={project.id} className="project-unique">
