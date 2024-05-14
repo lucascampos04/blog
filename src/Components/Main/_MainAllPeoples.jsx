@@ -10,11 +10,11 @@ export const _MainAllPeoples = () => {
 
   const allowedUserEmail = "camposdlucasoli@gmail.com";
 
-  const {user} = useContext(authContextGoogle)
+  const { user } = useContext(authContextGoogle);
 
   const isUserAuthorized = () => {
-    return user && user.email === allowedUserEmail
-  }
+    return user && user.email === allowedUserEmail;
+  };
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -36,23 +36,58 @@ export const _MainAllPeoples = () => {
 
     fetchProjects();
   }, []);
-  
+
+  const copyProjectId = (projectId) => {
+    navigator.clipboard
+      .writeText(projectId)
+      .then(() => {
+        alert("Id copiado com sucesso");
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
+
   return (
     <main>
       <div className="c1 modal-options-projects">
-        <FilterProject/>
+        <FilterProject />
       </div>
       <div className="c2 modal-view-all-projects">
         {projects.map((project) => (
           <div key={project.id} className="project-unique">
-            {isUserAuthorized() && <p> id : {project.id}</p>}
+            {isUserAuthorized() && (
+              <span className="fw-bold">
+                {" "}
+                id : {project.id}
+                {"\u00A0"}
+                {"\u00A0"}
+                <span
+                  onClick={() => copyProjectId(project.id)}
+                  style={{ cursor: "pointer" }}
+                >
+                  Copiar ID
+                </span>{" "}
+              </span>
+            )}
             <h2>{project.title}</h2>
             <p>{project.comentario}</p>
             <p>{project.dataFormatada}</p>
             <p>{project.language}</p>
-            {project.image && <img src={project.image} alt="Imagem" width={"500px"} height={"300px"}/>}
-            <a href={`https://github.com/lucascampos04/${project.projectLink}`} target="_blank" rel="noopener noreferrer">
-                Github
+            {project.image && (
+              <img
+                src={project.image}
+                alt="Imagem"
+                width={"500px"}
+                height={"300px"}
+              />
+            )}
+            <a
+              href={`https://github.com/lucascampos04/${project.projectLink}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Github
             </a>
           </div>
         ))}
